@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: rgb(23, 23, 23);
+    color: whitesmoke;
+    font-family: sans-serif;
+    font-weight: lighter;
+  }
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .emoji {
+      transform: scale(-1, 1);
+      -moz-transform: scale(-1, 1);
+      -webkit-transform: scale(-1, 1);
+      -o-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+      transform: scale(-1, 1);
+  }
