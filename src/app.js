@@ -11,19 +11,19 @@ import fansRoute from "./routes/fans.route.js"
 const app = express()
 
 app.use(cors({
-    origin: true,
-    credentials: true 
+  origin: process.env.CORS_ORIGIN,
+  credentials: true
 }))
 
 app.use((_, res, next) => {
-    res.header('Access-Control-Allow-Origin', process.env.CORS_ORIGIN);
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-  });
+  res.header('Access-Control-Allow-Origin', process.env.CORS_ORIGIN);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
+app.use(express.json({ limit: "16kb" }))
+app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.static("public"))
 app.use(cookieParser())
 
