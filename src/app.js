@@ -13,7 +13,7 @@ const app = express();
 
 /* --- CORS: production only --- */
 app.use(cors({
-  origin: process.env.CORS_ORIGIN,
+  origin: process.env.CORS_ORIGIN || "*",
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true
 }));
@@ -32,4 +32,4 @@ app.use("/api/v1/review", reviewRoute);
 app.use("/api/v1/booking", bookingRoute);
 app.use("/api/v1/get-all-fans", fansRoute);
 
-export { app };
+export default app;
